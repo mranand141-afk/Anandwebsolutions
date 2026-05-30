@@ -15,11 +15,11 @@ export async function POST(req: Request) {
         name, email, phone: phone || "", message, createdAt: new Date().toISOString()
       });
     } catch(e) { console.error("Firestore error:", e); }
-    if (process.env.RESEND_API_KEY && process.env.NOTIFICATION_EMAIL) {
+    if (process.env.RESEND_API_KEY) {
       const resend = new Resend(process.env.RESEND_API_KEY);
       await resend.emails.send({
         from: "contact@resend.dev",
-        to: process.env.NOTIFICATION_EMAIL,
+        to: "mranand141@gmail.com",
         subject: `New Contact Request from ${name}`,
         html: `<h1>New Message</h1><p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Phone:</strong> ${phone}</p><p><strong>Message:</strong></p><p>${message}</p>`,
       });

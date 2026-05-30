@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Reviews
+    match /reviews/{reviewId} {
+      allow read: if true; // anyone can read approved reviews (filtered on client and server)
+      allow write: if true; // anyone can write a review via API, API uses service account? No, API uses client SDK right now, wait
+    }
+    match /contactMessages/{messageId} {
+      allow read: if false; 
+      allow write: if true;
+    }
+    match /payments/{paymentId} {
+      allow read: if false;
+      allow write: if true;
+    }
+  }
+}

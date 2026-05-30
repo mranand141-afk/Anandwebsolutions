@@ -1,9 +1,10 @@
 {
-  "apiKey": "mock_api_key",
-  "authDomain": "mock.firebaseapp.com",
-  "projectId": "mock-project",
-  "storageBucket": "mock.appspot.com",
-  "messagingSenderId": "00000",
-  "appId": "1:000:web:00",
-  "firestoreDatabaseId": "(default)"
+  "projectId": "original-drake-ptpfc",
+  "appId": "1:333571005458:web:2929fac50b7b6e70368ccb",
+  "apiKey": "AIzaSyDxqowzkRAChvxKB1Rb9sIjIqkE4Da_y40",
+  "authDomain": "original-drake-ptpfc.firebaseapp.com",
+  "firestoreDatabaseId": "ai-studio-7df00306-305a-4a5f-b626-5b448fe4158e",
+  "storageBucket": "original-drake-ptpfc.firebasestorage.app",
+  "messagingSenderId": "333571005458",
+  "measurementId": ""
 }

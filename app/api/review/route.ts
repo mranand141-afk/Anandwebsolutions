@@ -13,11 +13,11 @@ export async function POST(req: Request) {
     await setDoc(doc(db, "reviews", reviewId), {
       name, email, rating: Number(rating), reviewText, status: "pending", createdAt: new Date().toISOString()
     });
-    if (process.env.RESEND_API_KEY && process.env.NOTIFICATION_EMAIL) {
+    if (process.env.RESEND_API_KEY) {
       const resend = new Resend(process.env.RESEND_API_KEY);
       await resend.emails.send({
         from: "reviews@resend.dev",
-        to: process.env.NOTIFICATION_EMAIL,
+        to: "mranand141@gmail.com",
         subject: `New Review Received from ${name}`,
         html: `<h1>New Review</h1><p><strong>Name:</strong> ${name}</p><p><strong>Rating:</strong> ${rating}/5</p><p><strong>Review:</strong> ${reviewText}</p><p>Review is pending approval. Please check your admin dashboard.</p>`,
       });

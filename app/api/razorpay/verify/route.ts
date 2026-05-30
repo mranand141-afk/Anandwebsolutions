@@ -17,10 +17,10 @@ export async function POST(req: Request) {
       amount: amount || 0, planName: planName || "Unknown", customerName: "Guest", customerEmail: "guest@example.com",
       customerPhone: "0000000000", status: "success", createdAt: new Date().toISOString(),
     });
-    if (process.env.RESEND_API_KEY && process.env.NOTIFICATION_EMAIL) {
+    if (process.env.RESEND_API_KEY) {
       const resend = new Resend(process.env.RESEND_API_KEY);
       await resend.emails.send({
-        from: "payments@resend.dev", to: process.env.NOTIFICATION_EMAIL, subject: `New Payment Received: ${planName}`,
+        from: "payments@resend.dev", to: "mranand141@gmail.com", subject: `New Payment Received: ${planName}`,
         html: `<h1>Payment Successful</h1><p><strong>Plan:</strong> ${planName}</p><p><strong>Amount:</strong> ₹${amount}</p><p><strong>Payment ID:</strong> ${paymentId}</p>`,
       });
     }
