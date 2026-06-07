@@ -27,5 +27,12 @@
     "postcss": "^8.5.6",
     "eslint": "9.39.1",
     "eslint-config-next": "16.0.8"
+  }{
+  "name": "your-app",
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.0.0",
+    <div class="node-database-code-snippet__highlighted-text">"@supabase/supabase-js": "^2.0.0"</div>
   }
+}
 }
